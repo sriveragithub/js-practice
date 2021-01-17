@@ -1,21 +1,24 @@
+// Modules
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
-const ejs = require('ejs');
+const path = require('path');
 
-const app = express(); // create express app
-app.set('view engine', 'ejs');  // use ejs for view engine -- seems pug is popular too
+// create express app
+const app = express();
 
+// App Config variables
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
 
+// Routing
 app.get('/', (req, res) => {
     let x = 15;
     res.render('homepage', { data : x });
 })
 
-
 app.get('/about', (req, res) => {
     res.render('about');
 })
-
 
 app.get('/my-biking', (req, res) => {
     res.render('biking');
