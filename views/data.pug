@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+  body
+    h1 Data Page
+    ul#my-list
+
+script.
+    var data = !{JSON.stringify(data)}
+    console.log(data)
+
+    // Create our list
+    var list = document.getElementById('my-list')
+    for(let i = 0; i < Object.keys(data).length; i++) {
+        let li = document.createElement('li');
+        li.textContent = data[i]['name'] + ' ' + data[i]['cost'];
+        list.appendChild(li);
+    }
