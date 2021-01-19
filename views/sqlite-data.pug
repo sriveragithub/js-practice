@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+  body
+    h1 Data Page
+    p#my-list
+
+script.
+    var query_data = !{JSON.stringify(query_data)}
+    console.log(query_data)
+
+    // Add the time to the page
+    let list = document.getElementById('my-list')
+    list.textContent = query_data["time('now')"]

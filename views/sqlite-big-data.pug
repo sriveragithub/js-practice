@@ -13,6 +13,6 @@ script.
     var list = document.getElementById('my-list')
     for(let i = 0; i < Object.keys(query_data).length; i++) {
         let li = document.createElement('li');
-        li.textContent = query_data[i]['name'] + ' ' + query_data[i]['cost'];
+        li.textContent = query_data[i]['id'] + ' ' + query_data[i]['fname'] + ' ' + query_data[i]['lname'];
         list.appendChild(li);
     }
